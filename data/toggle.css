@@ -1,0 +1,35 @@
+/* スイッチの土台（OFF時） */
+.toggle {
+  width: 50px;
+  height: 26px;
+  background: rgb(204 204 204);
+  border-radius: 50px;
+  position: relative;
+  display: inline-block;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+/* 中の白い丸（OFF時） */
+.toggle::before {
+  content: "";
+  width: 22px;
+  height: 22px;
+  background: white;
+  border-radius: 50%;
+  position: absolute;
+  top: 2px;
+  left: 2px;
+  transition: transform 0.3s;
+}
+
+/* スイッチの土台（ON時） */
+#themeToggle:checked + .toggle {
+  background: rgb(85 85 85);
+}
+
+/* 中の白い丸（ON時） */
+#themeToggle:checked + .toggle::before {
+  transform: translateX(24px);
+}
+

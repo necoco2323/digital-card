@@ -1,0 +1,38 @@
+/* デフォルト（OSの設定に連動） */
+:root {
+  color-scheme: light dark;
+
+  /* light-dark()を使って色を定義 */
+  --body-color: light-dark(rgb(240 240 240), rgb(23 28 39));
+  --card-color: light-dark(rgb(239 234 231), rgb(28 35 56));
+  --card-border-color: light-dark(rgb(204 204 204), transparent);
+  --card-shadow-color: light-dark(rgba(0 0 0 / 0.1), transparent);
+  --text-color: light-dark(rgb(0 0 0), rgb(255 255 255));
+}
+
+/* 手動切替用の設定（color-schemeを強制上書き） */
+html[theme="light"] {
+  color-scheme: light;
+}
+
+html[theme="dark"] {
+  color-scheme: dark;
+}
+
+/* 手動切替用の設定（要素の前方に挿入） */
+html[theme="light"] .sub::before {
+  content: "微睡む者";
+}
+
+html[theme="dark"] .sub::before {
+  content: "闇夜に跳ぶログキャット";
+}
+
+/* 手動切替用の設定（background-imageを強制上書き） */
+html[theme="light"] .barcode {
+  background-image: url("./2dbB.png");
+}
+
+html[theme="dark"] .barcode {
+  background-image: url("./2dbW.png");
+}
