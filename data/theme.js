@@ -14,6 +14,14 @@ function getInitTheme() {
 function applyTheme(theme) {
   document.documentElement.setAttribute("theme", theme);
   checkbox.checked = (theme === "dark") ? true : false;
+
+  //▼GitHubロゴ切替
+  const logo = document.querySelector(".invertocat");
+  if (theme === "dark") {
+    logo.src = "./data/GitHub_Invertocat_White.png";
+  } else {
+    logo.src = "./data/GitHub_Invertocat_Black.png";
+  }
 }
 
 //▼初期読み込み

@@ -28,11 +28,11 @@ html[theme="dark"] .sub::before {
   content: "闇夜に跳ぶログキャット";
 }
 
-/* 手動切替用の設定（background-imageを強制上書き） */
+/* 手動切替用の設定（白黒反転） */
 html[theme="light"] .barcode {
-  background-image: url("./2dbB.png");
+  filter: none;
 }
 
 html[theme="dark"] .barcode {
-  background-image: url("./2dbW.png");
+  filter: brightness(0) invert(1);
 }
